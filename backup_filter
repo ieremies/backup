@@ -1,0 +1,19 @@
+- .local/
+- .cache/
+- .emacs.d/
+- .mozilla/
+- .zim/
+- .zotero/
+- .icons/
+- .java/
+- .stremio-server/
+- .steam/
+- .openjfx/
+
+- .config/discord/
+- .config/google-chrome/
+- .config/Slack/
+- .config/gtk-4.0/
+- .config/gtk-3.0/
+
+- .auctex-auto

@@ -1,0 +1,19 @@
+#+Title: Backup
+
+Meu sistema de backup
+
+- Gerar lista de pacotes instalados no sistema (fora dos grupos base e base-dev)
+- Fazer o backup de todos os arquivos
+- Indicar quais repositórios git estão sujos ou dessincronizados com o remoto.
+
+
+Esse backup deve ser feito de forma automática, toda noite, caso o computador esteja em suspensão e conectado à tomada.
+
+#+begin_src bash
+expac -H M '%-20n\t%10d' $(comm -23 <(pacman -Qqt | sort) <({ pacman -Qqg base-devel; echo base; } | sort -u)) >| ~/.packages
+#+end_src bash
+
+Diretórios com muitos arquivos provavelemente não são importantes de serem salvos.
+#+begin_src bash
+sudo du -a | cut -d/ -f2 | sort | uniq -c | sort -nr
+#+end_src bash
